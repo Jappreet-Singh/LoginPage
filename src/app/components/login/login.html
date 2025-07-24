@@ -1,0 +1,102 @@
+<div class="login-page">
+  <!-- Animated background -->
+  <div class="bg-animation">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <!-- Main login container -->
+  <div
+    class="container-fluid d-flex align-items-center justify-content-center min-vh-100"
+  >
+    <div class="row w-100 justify-content-center">
+      <div class="col-11 col-sm-8 col-md-6 col-lg-4">
+        <div class="login-container">
+          <!-- Header -->
+          <div class="login-header">
+            <h1 class="login-title">Welcome Back</h1>
+            <p class="login-subtitle">Sign in to continue your journey</p>
+          </div>
+
+          <!-- Login Form -->
+          <form [formGroup]="loginForm">
+            <!-- Email Input -->
+            <div class="form-floating">
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder=""
+                formControlName="EmailId"
+                required
+              />
+              <label for="email"
+                ><i class="fas fa-envelope me-2"></i>Email address</label
+              >
+            </div>
+
+            <!-- Password Input -->
+            <div class="form-floating">
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder=""
+                formControlName="Password"
+                required
+              />
+              <label for="password"
+                ><i class="fas fa-lock me-2"></i>Password</label
+              >
+            </div>
+
+            <!-- Remember Me & Forgot Password -->
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="remember" />
+                <label class="form-check-label" for="remember">
+                  Remember me
+                </label>
+              </div>
+              <a href="#" class="auth-links">Forgot Password?</a>
+            </div>
+
+            <!-- Login Button -->
+            <button class="btn btn-login" type="button" (click)="OnLogin()">
+              <span>Sign In</span>
+            </button>
+          </form>
+
+          <!-- Social Login
+          <div class="social-login text-center">
+            <p class="text-white-50 mb-3">Or continue with</p>
+            <a href="#" class="social-btn">
+              <i class="fab fa-google"></i>
+            </a>
+            <a href="#" class="social-btn">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-btn">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-btn">
+              <i class="fab fa-github"></i>
+            </a>
+          </div> -->
+
+          <!-- Sign Up Link -->
+          <div class="auth-links">
+            <p class="text-white-50 mb-0">
+              Don't have an account?
+              <a href="#">Sign up here</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

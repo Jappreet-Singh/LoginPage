@@ -1,0 +1,246 @@
+   :root {
+       --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+       --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+       --glass-bg: rgba(255, 255, 255, 0.1);
+       --glass-border: rgba(255, 255, 255, 0.2);
+   }
+
+   .layout-container {
+       background: var(--primary-gradient);
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       margin: 0;
+   }
+
+   /* Override Bootstrap navbar styles */
+   .navbar {
+       backdrop-filter: blur(25px) !important;
+       background: var(--glass-bg) !important;
+       border-bottom: 1px solid var(--glass-border) !important;
+       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+       animation: slideInDown 0.8s ease-out;
+       position: relative;
+       overflow: hidden;
+       padding: 1rem 0 !important;
+   }
+
+   .navbar::before {
+       content: '';
+       position: absolute;
+       top: 0;
+       left: -100%;
+       width: 100%;
+       height: 100%;
+       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+       animation: shimmer 4s infinite;
+       z-index: -1;
+   }
+
+   @keyframes slideInDown {
+       from {
+           opacity: 0;
+           transform: translateY(-100%);
+       }
+
+       to {
+           opacity: 1;
+           transform: translateY(0);
+       }
+   }
+
+   @keyframes shimmer {
+       0% {
+           left: -100%;
+       }
+
+       100% {
+           left: 100%;
+       }
+   }
+
+   /* Navbar Brand/Logo */
+   .navbar-brand {
+       font-size: 1.8rem !important;
+       font-weight: 700 !important;
+       background: linear-gradient(45deg, #fff, #f0f0f0, #fff) !important;
+       background-size: 200% 200% !important;
+       -webkit-background-clip: text !important;
+       -webkit-text-fill-color: transparent !important;
+       background-clip: text !important;
+       animation: gradientShift 3s ease-in-out infinite !important;
+       filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)) !important;
+       text-decoration: none !important;
+       transition: all 0.3s ease !important;
+   }
+
+   .navbar-brand:hover {
+       transform: scale(1.05) !important;
+       filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5)) !important;
+   }
+
+   @keyframes gradientShift {
+
+       0%,
+       100% {
+           background-position: 0% 50%;
+       }
+
+       50% {
+           background-position: 100% 50%;
+       }
+   }
+
+   /* Navigation Links */
+   .navbar-nav {
+       gap: 0.5rem;
+   }
+
+   .nav-item {
+       margin-top: 0 !important;
+       /* Remove the negative margin */
+   }
+
+   .nav-link {
+       color: rgba(255, 255, 255, 0.9) !important;
+       font-weight: 500 !important;
+       padding: 0.75rem 1.25rem !important;
+       border-radius: 12px !important;
+       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+       position: relative !important;
+       overflow: hidden !important;
+       text-decoration: none !important;
+   }
+
+   .nav-link::before {
+       content: '';
+       position: absolute;
+       top: 0;
+       left: -100%;
+       width: 100%;
+       height: 100%;
+       background: rgba(255, 255, 255, 0.1);
+       transition: left 0.4s ease;
+       z-index: -1;
+   }
+
+   .nav-link:hover {
+       color: white !important;
+       background: rgba(255, 255, 255, 0.15) !important;
+       transform: translateY(-2px) !important;
+       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+   }
+
+   .nav-link:hover::before {
+       left: 0;
+   }
+
+   .nav-link.active {
+       background: var(--secondary-gradient) !important;
+       color: white !important;
+       box-shadow: 0 5px 15px rgba(245, 87, 108, 0.3) !important;
+   }
+
+   /* Mobile Toggle Button */
+   .navbar-toggler {
+       border: 1px solid rgba(255, 255, 255, 0.2) !important;
+       padding: 0.5rem !important;
+       border-radius: 8px !important;
+       transition: all 0.3s ease !important;
+   }
+
+   .navbar-toggler:hover {
+       background: rgba(255, 255, 255, 0.1) !important;
+       border-color: rgba(255, 255, 255, 0.3) !important;
+   }
+
+   .navbar-toggler:focus {
+       box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.1) !important;
+   }
+
+   .navbar-toggler-icon {
+       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+   }
+
+   /* Search Form */
+   .d-flex {
+       gap: 0.5rem;
+   }
+
+   .form-control {
+       background: rgba(255, 255, 255, 0.1) !important;
+       border: 1px solid rgba(255, 255, 255, 0.2) !important;
+       border-radius: 25px !important;
+       color: white !important;
+       padding: 0.6rem 1rem !important;
+       transition: all 0.4s ease !important;
+       width: 200px;
+   }
+
+   .form-control:focus {
+       background: rgba(255, 255, 255, 0.15) !important;
+       border-color: rgba(255, 255, 255, 0.4) !important;
+       box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.1) !important;
+       color: white !important;
+       transform: scale(1.02) !important;
+       width: 250px;
+   }
+
+   .form-control::placeholder {
+       color: rgba(255, 255, 255, 0.6) !important;
+   }
+
+   /* Search Button */
+   .btn-primary {
+       background: var(--secondary-gradient) !important;
+       border: none !important;
+       border-radius: 25px !important;
+       padding: 0.6rem 1.5rem !important;
+       font-weight: 600 !important;
+       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+       position: relative !important;
+       overflow: hidden !important;
+   }
+
+   .btn-primary::before {
+       content: '';
+       position: absolute;
+       top: 0;
+       left: -100%;
+       width: 100%;
+       height: 100%;
+       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+       transition: left 0.5s ease;
+   }
+
+   .btn-primary:hover {
+       transform: translateY(-2px) !important;
+       box-shadow: 0 8px 25px rgba(245, 87, 108, 0.3) !important;
+       filter: brightness(1.1) !important;
+   }
+
+   .btn-primary:hover::before {
+       left: 100%;
+   }
+
+   .btn-primary:active {
+       transform: translateY(0px) !important;
+   }
+
+   /* Responsive adjustments */
+   @media (max-width: 575px) {
+       .form-control {
+           width: 150px;
+       }
+
+       .form-control:focus {
+           width: 180px;
+       }
+
+       .d-flex {
+           margin-top: 1rem;
+           width: 100%;
+       }
+
+       .form-control {
+           flex: 1;
+       }
+   }
