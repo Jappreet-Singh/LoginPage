@@ -7,15 +7,67 @@
     <div class="particle"></div>
   </div>
   <!-- Demo Content -->
-    <div class="demo-content">
-        <div class="demo-card">
-            <h2 style="background: linear-gradient(45deg, #fff, #f0f0f0); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                Your Navbar - Glassmorphism Style
-            </h2>
-            <p style="color: rgba(255,255,255,0.8); margin-bottom: 0;">
-                I've converted your existing Bootstrap navbar to match the glassmorphism login page design. 
-                The structure remains the same, but now with beautiful glass effects, animations, and modern styling!
-            </p>
-        </div>
+  <div class="demo-content">
+    <div class="demo-card">
+      <h2
+        style="
+          background: linear-gradient(45deg, #fff, #f0f0f0);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        "
+      >
+        Your Navbar - Glassmorphism Style
+      </h2>
+      <table style="color: rgba(255, 255, 255, 0.8); margin-bottom: 0">
+        <thead>
+          <tr>
+            <th
+              style="
+                padding: 10px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+              "
+            >
+              Sr.
+            </th>
+            <th
+              style="
+                padding: 10px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+              "
+            >
+              First name
+            </th>
+            <th
+              style="
+                padding: 10px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+              "
+            >
+              Email
+            </th>
+            <th
+              style="
+                padding: 10px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+              "
+            >
+              Mobile No.
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (item of userData.slice(0,30); track $index) { 
+            <tr>
+                <td style="padding: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.2)">{{ $index + 1 }}</td>
+                <td style="padding: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.2)">{{ item.firstName }}</td>
+                <td style="padding: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.2)">{{ item.emailId }}</td>
+                <td style="padding: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.2)">{{ item.mobileNo }}</td>
+            </tr>
+            
+          }
+        </tbody>
+      </table>
     </div>
+  </div>
 </div>

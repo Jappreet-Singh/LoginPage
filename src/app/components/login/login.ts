@@ -26,6 +26,9 @@ export class Login {
       next: (response:any) => {
         debugger
         if(response.result){
+          // Assuming the response contains a token or some user data
+          localStorage.setItem("token", response.data.token);
+          
           alert("Login successful");
           console.log("Login successful", response);
         // Handle successful login, e.g., navigate to a different page or store user data
