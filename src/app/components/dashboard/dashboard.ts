@@ -10,8 +10,10 @@ import { Component, inject } from '@angular/core';
 export class Dashboard {
   http = inject(HttpClient);
   userData: any[] = [];
+  token: string | null = null;
 
   constructor() {
+    this.token = localStorage.getItem('token');
     this.getUsers();
   }
 

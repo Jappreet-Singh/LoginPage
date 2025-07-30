@@ -9,6 +9,7 @@
   <!-- Demo Content -->
   <div class="demo-content">
     <div class="demo-card">
+      @if (token == null) {
       <h2
         style="
           background: linear-gradient(45deg, #fff, #f0f0f0);
@@ -17,8 +18,9 @@
           -webkit-text-fill-color: transparent;
         "
       >
-        Your Navbar - Glassmorphism Style
+        You are caught trying to access the dashboard without logging in.
       </h2>
+      }@else {
       <table style="color: rgba(255, 255, 255, 0.8); margin-bottom: 0">
         <thead>
           <tr>
@@ -57,17 +59,46 @@
           </tr>
         </thead>
         <tbody>
-          @for (item of userData.slice(0,30); track $index) { 
-            <tr>
-                <td style="padding: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.2)">{{ $index + 1 }}</td>
-                <td style="padding: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.2)">{{ item.firstName }}</td>
-                <td style="padding: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.2)">{{ item.emailId }}</td>
-                <td style="padding: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.2)">{{ item.mobileNo }}</td>
-            </tr>
-            
+          @for (item of userData.slice(0,30); track $index) {
+          <tr>
+            <td
+              style="
+                padding: 10px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+              "
+            >
+              {{ $index + 1 }}
+            </td>
+            <td
+              style="
+                padding: 10px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+              "
+            >
+              {{ item.firstName }}
+            </td>
+            <td
+              style="
+                padding: 10px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+              "
+            >
+              {{ item.emailId }}
+            </td>
+            <td
+              style="
+                padding: 10px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+              "
+            >
+              {{ item.mobileNo }}
+            </td>
+          </tr>
+
           }
         </tbody>
       </table>
+      }
     </div>
   </div>
 </div>

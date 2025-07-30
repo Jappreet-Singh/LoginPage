@@ -11,5 +11,8 @@ export class Layout {
   router = inject(Router);
   onLogOut() {
     this.router.navigate(['/login']);
+    debugger;
+    // Clear the token from local storage
+    localStorage.removeItem('token');
   }
 }
